@@ -67,17 +67,20 @@ const images = [
 
 const galleryContainerEl = document.querySelector(".gallery");
 
-galleryContainerEl.insertAdjacentHTML("beforeend", createMarkup(images));
+// galleryContainerEl.insertAdjacentHTML("beforeend", createMarkup(images));
 // galleryContainerEl.addEventListener("click", handleCardClick);
 
-const cardImg = document.querySelector("img");
+// const cardImg = document.querySelector("img");
 
 function createMarkup(array) {
-   return array
-      .map((cards) => `
-   <li class = "item">
-      <a class="gallery-link" href="${cards.original}">
-            <img class = "gallery-image" src = "${cards.preview}" alt = "${cards.description}" data-source = "${cards.original}" > 
+    return array
+        .map(({original,preview, description }) => `
+   <li class = "gallery-item">
+      <a class="gallery-link" href="${original}">
+            <img class = "gallery-image"
+            src = "${preview}" 
+            data-source = "large-image.jpg"
+            alt = "${description}" /> 
       </a>
    </li>
    `)
