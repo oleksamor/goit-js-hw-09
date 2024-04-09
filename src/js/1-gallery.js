@@ -1,3 +1,5 @@
+import simpleLightbox from "simplelightbox";
+
 const images = [
  {
  preview:
@@ -64,15 +66,19 @@ const images = [
     description: 'Lighthouse Coast Sea',
   },
 ];
+// import { images } from "";
+import SimpleLightbox from "simplelightbox";
+import "simplelightbox/dist/simple-lightbox.min.css";
 
 const galleryContainerEl = document.querySelector(".gallery");
 
-// galleryContainerEl.insertAdjacentHTML("beforeend", createMarkup(images));
+galleryContainerEl.insertAdjacentHTML("beforeend", createMarkup(images));
 // galleryContainerEl.addEventListener("click", handleCardClick);
 
 // const cardImg = document.querySelector("img");
 
 function createMarkup(array) {
+   console.log(array);
     return array
         .map(({original,preview, description }) => `
    <li class = "gallery-item">
@@ -87,31 +93,11 @@ function createMarkup(array) {
       .join("");
 }
 
+let gallery = new simpleLightbox('.gallery a', {
+   sourceAttr : "data-img",
+    overlayOpacity: .8,
+    captionsData: "alt",
+    captionDelay: 250,
+    captionClass : "text-center"
 
-// function handleCardClick(event) {
-//    event.preventDefault();
-//    if (event.target === event.currentTarget) {
-//       return;
-//    }
-//    const currentCard = event.target.closest(".gallery-image");
-//    const cardOriginal = currentCard.dataset.source;
-//    const card = images.find(item => item.original === cardOriginal);
-  
-//    const instance = basicLightbox.create(`
-//       <div class="modal">
-//          <img src = "${card.original}" class = "img" alt = "${card.description}">
-//          <h2> "${card.description}"</h2>;
-//       </div>
-//    `,
-//       {
-//          onShow: (instance) => document.addEventListener('keydown', onEscClick),
-//       });
-
-//    instance.show();
-   
-//    function onEscClick(event) {
-//       if (event.code === 'Escape') {
-//          instance.close();
-//       }
-//    }
-// }
+})

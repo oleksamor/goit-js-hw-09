@@ -37,6 +37,28 @@ body {
   color: #212121;
   line-height: 1.5;
 }
+.feedback-form {
+    width: 480px;
+  }
+  
+  .feedback-form > label {
+    width: 100%;
+    margin-bottom: 16px;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .feedback-form input,
+  .feedback-form textarea {
+    font: inherit;
+    padding: 8px;
+  }
+  
+  .feedback-form textarea {
+    resize: none;
+  }
+
 .gallery {
 display: flex;
 width: 1440px;
@@ -60,7 +82,7 @@ list-style: none;
     height: 200px;
       }
 
-
+/* 
 .modal {
     width: 1440px;
     height: 696px;
@@ -86,4 +108,4 @@ list-style: none;
   .gallery-image:hover{
     width: 378px;
     height: 208px;
-  }
+  } */
