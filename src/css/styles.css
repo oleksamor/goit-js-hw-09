@@ -65,7 +65,7 @@ width: 1440px;
 height: 696px;
 padding: 10px 15px;
 flex-wrap: wrap;
-gap: 25px;
+gap: 8%;
 user-select: none;
 list-style: none;
 }
