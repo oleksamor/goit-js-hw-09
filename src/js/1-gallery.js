@@ -67,21 +67,15 @@ const images = [
     description: 'Lighthouse Coast Sea',
   },
 ];
-// import { images } from "";
-
 
 const galleryContainerEl = document.querySelector(".gallery");
 
-galleryContainerEl.insertAdjacentHTML("beforeend", createMarkup(images));
-// galleryContainerEl.addEventListener("click", handleCardClick);
-
-// const cardImg = document.querySelector("img");
-
+   
 function createMarkup(array) {
    console.log(array);
-    return array
-        .map(({original,preview, description }) => `
-   <li class = "gallery-item">
+   return array
+      .map(({ original, preview, description }) => `
+      <li class = "gallery-item">
       <a class="gallery-link" href="${original}">
             <img class = "gallery-image"
             src = "${preview}" 
@@ -93,7 +87,10 @@ function createMarkup(array) {
       .join("");
 }
 
-let gallery = new simpleLightbox('.gallery a', {
+
+galleryContainerEl.insertAdjacentHTML("beforeend", createMarkup(images));
+
+let gallery = $('.gallery a').simpleLightbox({
    sourceAttr : "data-img",
     overlayOpacity: .8,
     captionsData: "alt",
