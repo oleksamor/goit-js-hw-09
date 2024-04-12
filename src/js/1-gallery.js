@@ -91,7 +91,7 @@ function createMarkup(array) {
 
 galleryContainerEl.insertAdjacentHTML("beforeend", createMarkup(images));
 
-let gallery = $('.gallery a').simpleLightbox({
+const lightbox = $('.gallery a').simpleLightbox({
    sourceAttr : "data-img",
     overlayOpacity: .8,
     captionsData: "alt",
