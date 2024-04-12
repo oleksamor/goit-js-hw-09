@@ -91,10 +91,6 @@ function createMarkup(array) {
 galleryContainerEl.insertAdjacentHTML("beforeend", createMarkup(images));
 
 const lightbox = new SimpleLightbox('.gallery a', {
-   sourceAttr: "data-img",
-   overlayOpacity: .8,
    captionsData: "alt",
    captionDelay: 250,
-   captionClass: "text-center"
-
-});
+  });
