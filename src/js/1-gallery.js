@@ -1,6 +1,6 @@
 import SimpleLightbox from "simplelightbox";
 import "simplelightbox/dist/simple-lightbox.min.css";
-console.log("TEST TEST");
+
 
 const images = [
  {
@@ -73,7 +73,6 @@ const galleryContainerEl = document.querySelector(".gallery");
 
    
 function createMarkup(array) {
-   console.log(array);
    return array
       .map(({ original, preview, description }) => `
       <li class = "gallery-item">
@@ -91,11 +90,11 @@ function createMarkup(array) {
 
 galleryContainerEl.insertAdjacentHTML("beforeend", createMarkup(images));
 
-const lightbox = $('.gallery a').simpleLightbox({
-   sourceAttr : "data-img",
-    overlayOpacity: .8,
-    captionsData: "alt",
-    captionDelay: 250,
-    captionClass : "text-center"
+const lightbox = new SimpleLightbox('.gallery a', ({
+   sourceAttr: "data-img",
+   overlayOpacity: .8,
+   captionsData: "alt",
+   captionDelay: 250,
+   captionClass: "text-center"
 
-})
+}));
