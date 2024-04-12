@@ -7,5 +7,5 @@
             alt = "${i}" /> 
       </a>
    </li>
-   `).join("")}s.insertAdjacentHTML("beforeend",l(c));new n(".gallery a",{sourceAttr:"data-img",overlayOpacity:.8,captionsData:"alt",captionDelay:250,captionClass:"text-center"});
+   `).join("")}s.insertAdjacentHTML("beforeend",l(c));new n(".gallery a",{captionsData:"alt",captionDelay:250});
 //# sourceMappingURL=commonHelpers.js.map
