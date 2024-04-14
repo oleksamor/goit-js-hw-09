@@ -26,10 +26,14 @@ form.addEventListener("submit", event => {
    
     event.preventDefault();
     const savedMessage = JSON.parse(localStorage.getItem(STORAGE_KEY));
-  
-    if (form.email.value && form.message.value) {
-        console.log("email: ", form.email.value);
-        console.log("message: ", form.message.value);
+    const emailClear = savedMessage.email.trim();
+    const messageClear = savedMessage.message.trim()
+
+// console.log(emailClear, messageClear );
+    if (emailClear && messageClear) {
+        savedMessage.email = emailClear;
+        savedMessage.message = messageClear
+        console.log(savedMessage);
         event.currentTarget.reset();
         localStorage.removeItem(STORAGE_KEY);
         console.log("message sent");
