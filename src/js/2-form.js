@@ -13,8 +13,8 @@ form.addEventListener("input", event => {
     event.preventDefault();
     
     const formValues = {
-        email: form.email.value,
-        message: form.message.value
+        email: form.email.value.trim(),
+        message: form.message.value.trim()
     }
  
     localStorage.setItem(STORAGE_KEY, JSON.stringify(formValues));
@@ -34,9 +34,9 @@ form.addEventListener("submit", event => {
         savedMessage.email = emailClear;
         savedMessage.message = messageClear
         console.log(savedMessage);
-        event.currentTarget.reset();
-        localStorage.removeItem(STORAGE_KEY);
         window.alert("message sent");
+        localStorage.removeItem(STORAGE_KEY);
+         event.currentTarget.reset();
     } else {
         window.alert("fill in empty fields");
     };
