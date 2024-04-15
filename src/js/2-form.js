@@ -29,14 +29,13 @@ form.addEventListener("submit", event => {
     const emailClear = savedMessage.email.trim();
     const messageClear = savedMessage.message.trim()
 
-// console.log(emailClear, messageClear );
+
     if (emailClear && messageClear) {
         savedMessage.email = emailClear;
         savedMessage.message = messageClear
         console.log(savedMessage);
         event.currentTarget.reset();
         localStorage.removeItem(STORAGE_KEY);
-        console.log("message sent");
         window.alert("message sent");
     } else {
         window.alert("fill in empty fields");
