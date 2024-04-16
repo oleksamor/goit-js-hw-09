@@ -1,10 +1,7 @@
-console.log("TEST TEST");
-
+const STORAGE_KEY = "feedback-message";
 const form = document.querySelector(".feedback-form");
 const textarea = form.querySelector("textarea");
 const input = form.querySelector("input")
-
-const STORAGE_KEY = "feedback-message";
 
 populateInfo();
 
